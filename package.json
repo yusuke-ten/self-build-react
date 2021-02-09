@@ -1,0 +1,32 @@
+{
+  "name": "self-build-react",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/yusuke-ten/self-build-react#readme",
+  "bugs": {
+    "url": "https://github.com/yusuke-ten/self-build-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusuke-ten/self-build-react.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/register": "^7.12.13",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "babel-loader": "^8.2.2",
+    "husky": "^4.3.8",
+    "semantic-release": "^17.3.7",
+    "typescript": "^4.1.3"
+  }
+}

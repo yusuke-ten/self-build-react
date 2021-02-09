@@ -5,7 +5,7 @@ console.log(path.resolve(__dirname, "src/index.jsx"));
 
 module.exports = {
   mode: "development",
-  entry: path.resolve(__dirname, "src/index.jsx"),
+  entry: path.resolve(__dirname, "src/index.tsx"),
 
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -15,16 +15,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        use: "ts-loader",
       },
     ],
   },
 
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
   },
+
+  devServer: {
+    contentBase: path.resolve(__dirname, "dist"),
+    port: 9090,
+    historyApiFallback: true, // これがないとルーティングできない
+  },
+
+  devtool: "source-map",
 
   plugins: [
     //以下追記

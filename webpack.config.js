@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-console.log(path.resolve(__dirname, "src/index.jsx"));
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -27,18 +26,19 @@ module.exports = {
   },
 
   devServer: {
+    open: true,
     contentBase: path.resolve(__dirname, "dist"),
     port: 9090,
-    historyApiFallback: true, // これがないとルーティングできない
+    historyApiFallback: true,
   },
 
   devtool: "source-map",
 
   plugins: [
-    //以下追記
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
       filename: "index.html",
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
